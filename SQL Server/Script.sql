@@ -6,7 +6,7 @@ CREATE DATABASE POSPizzeria
 USE POSPizzeria
 
 -- Creacion de modelos/tablas
-CREATE TABLE Cliente (
+CREATE TABLE Clientes (
     Id INT PRIMARY KEY IDENTITY(1,1),
     Nombre NVARCHAR(255) NOT NULL,
     Apellido NVARCHAR(255) NOT NULL,
@@ -20,40 +20,40 @@ CREATE TABLE Direccion (
     Numero INT NOT NULL,
     Ciudad NVARCHAR(255) NOT NULL,
     Pais NVARCHAR(255) NOT NULL,
-    FOREIGN KEY (ClienteId) REFERENCES Cliente(Id)
+    FOREIGN KEY (ClienteId) REFERENCES Clientes(Id)
 );
 
-CREATE TABLE Producto (
+CREATE TABLE Productos (
     Id INT PRIMARY KEY IDENTITY(1,1),
     Nombre NVARCHAR(255) NOT NULL,
     Descripcion NVARCHAR(500) NULL,
     Precio DECIMAL(10,2) NOT NULL
 );
 
-CREATE TABLE Pedido (
+CREATE TABLE Pedidos (
     Id INT PRIMARY KEY IDENTITY(1,1),
     ClienteId INT NOT NULL,
     FechaPedido DATE NOT NULL,
     TotalPedido DECIMAL(10,2) NOT NULL,
-    FOREIGN KEY (ClienteId) REFERENCES Cliente(id)
+    FOREIGN KEY (ClienteId) REFERENCES Clientes(Id)
 );
 
-CREATE TABLE PedidoDetalle (
+CREATE TABLE PedidosDetalle (
     Id INT PRIMARY KEY IDENTITY(1,1),
     PedidoId INT NOT NULL,
     ProductoId INT NOT NULL,
     Cantidad INT NOT NULL,
     PrecioUnitario DECIMAL(10,2) NOT NULL,
     Impuesto DECIMAL(10,2) NOT NULL,
-    FOREIGN KEY (ProductoId) REFERENCES Producto(Id),
-    FOREIGN KEY (PedidoId) REFERENCES Pedido(Id)
+    FOREIGN KEY (ProductoId) REFERENCES Productos(Id),
+    FOREIGN KEY (PedidoId) REFERENCES Pedidos(Id)
 );
 
 
-CREATE TABLE Usuario (
+CREATE TABLE Usuarios (
     Id INT PRIMARY KEY IDENTITY(1,1),
-    UserName NVARCHAR(50) NOT NULL,
-    Password BINARY(64) NOT NULL
+    UserName NVARCHAR(10) NOT NULL,
+    Password NVARCHAR(100) NOT NULL
 );
 
 
