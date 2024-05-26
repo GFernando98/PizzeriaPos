@@ -23,7 +23,7 @@ namespace Project.Pos.Pizzeria.WebApi.Domain
         {
             var getOrderDetail = await _pedidosDetalleRepository.GetOrderDetailById(entity.Id);
             if (getOrderDetail != null) return StatusDomain.OrderDetailExist;
-            entity.Total = ((entity.Cantidad * entity.PrecioUnitario) * (entity.Impuesto / 100));            
+            entity.Total = ((entity.Cantidad * entity.PrecioUnitario) * (entity.Impuesto / 100) + (entity.Cantidad * entity.PrecioUnitario));            
             var mapOrderDetail = _mapper.Map<PedidosDetalle>(entity);
             var insert = await _pedidosDetalleRepository.InserOrderDetail(mapOrderDetail);
             await UpdateTotalOrder(entity.PedidoId);
@@ -46,7 +46,7 @@ namespace Project.Pos.Pizzeria.WebApi.Domain
             var getOrderDetail = await _pedidosDetalleRepository.GetOrderDetailByOrder(entity.Id);
             if (getOrderDetail == null) return StatusDomain.OrderDetailNotExist;
 
-            entity.Total = ((entity.Cantidad * entity.PrecioUnitario) * (entity.Impuesto / 100));            
+            entity.Total = ((entity.Cantidad * entity.PrecioUnitario) * (entity.Impuesto / 100) + (entity.Cantidad * entity.PrecioUnitario));
             var mapOrderDetail = _mapper.Map<PedidosDetalle>(entity);
 
             var update = await _pedidosDetalleRepository.UpdateOrderDetail(mapOrderDetail);
