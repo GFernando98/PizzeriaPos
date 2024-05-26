@@ -60,8 +60,7 @@ public class StatusDomainMessage
             StatusDomain.OrderDetailUpdate => "El pedido detalle se actualizo correctamente.",
             StatusDomain.OrderDetailUpdateError => "Ocurrió un error mientas se actualizaba el pedido detalle.",
             StatusDomain.OrderDetailDelete => "El pedido detalle se elimino correctamente.",
-            StatusDomain.OrderDetailDeleteError => "Ocurrió un error mientras se eliminaba el pedido detalle.",
-        }
+            StatusDomain.OrderDetailDeleteError => "Ocurrió un error mientras se eliminaba el pedido detalles"        
         };
     }
 }
