@@ -14,7 +14,6 @@ namespace Project.Pos.Pizzeria.WebApi.Domain
             this._clientesRepository = clientesRepository;
         }
 
-
         public async Task<StatusDomain> CreateCustomer(Clientes entity)
         {
             var getCustomer = await _clientesRepository.GetCustomersById(entity);

@@ -23,6 +23,25 @@ builder.Services.AddTransient<ClientesRepository>();
 builder.Services.AddTransient<ClientesDomain>();
 builder.Services.AddTransient<ClientesCommand>();
 
+builder.Services.AddTransient<DireccionesQuery>();
+builder.Services.AddTransient<DireccionesRepository>();
+builder.Services.AddTransient<DireccionesDomain>();
+builder.Services.AddTransient<DireccionesCommand>();
+
+builder.Services.AddTransient<ProductosQuery>();
+builder.Services.AddTransient<ProductosRepository>();
+builder.Services.AddTransient<ProductosDomain>();
+builder.Services.AddTransient<ProductosCommand>();
+
+builder.Services.AddTransient<PedidosQuery>();
+builder.Services.AddTransient<PedidosRepository>();
+builder.Services.AddTransient<PedidosDomain>();
+builder.Services.AddTransient<PedidosCommand>();
+
+builder.Services.AddAutoMapper(x => x.AddProfile(new MapperProfile()),
+    AppDomain.CurrentDomain.GetAssemblies());
+
+
 // Add services to the container.
 
 builder.Services.AddControllers();

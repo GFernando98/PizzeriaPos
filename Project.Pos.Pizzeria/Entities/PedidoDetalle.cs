@@ -23,10 +23,6 @@ namespace Project.Pos.Pizzeria.WebApi.Entities
         [Required]
         public decimal Impuesto { get; set; }
 
-        [ForeignKey("PedidoId")]
-        public virtual Pedidos Pedido { get; set; }
-
-        [ForeignKey("ProductoId")]
-        public virtual Productos Producto { get; set; }
+        public decimal Total { get; set; }
     }
 }

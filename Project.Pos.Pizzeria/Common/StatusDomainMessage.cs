@@ -23,7 +23,16 @@ public class StatusDomainMessage
             StatusDomain.CustomerUpdate => "Se actualizo el cliente correctamente.",
             StatusDomain.CustomerDelete => "Se elimino el cliente correctamente.",
             StatusDomain.CustomerExist => "El cliente ya existe.",
-            StatusDomain.CustomerNotExist => "El cliente no existe."
+            StatusDomain.CustomerNotExist => "El cliente no existe.",
+
+            StatusDomain.AddressExist => "La dirección ya existe.",
+            StatusDomain.AddressNotExist => "La dirección no existe.",
+            StatusDomain.AddressCreate => "Se creó la direccion correctamente.",
+            StatusDomain.AddressCreateError => "Ocurrió un error mientra se creaba la dirección.",
+            StatusDomain.AddressUpdate => "Se actualizo la dirección correctamente.",
+            StatusDomain.AddressUpdateError => "Ocurrió un error mientras se actualizaba la dirección.",
+            StatusDomain.AddressDelete => "Se eliminó la dirección correctamnete.",
+            StatusDomain.AddressDeleteError => "Ocurrió un error mientras se eliminaba la dirección",
         };
     }
 }

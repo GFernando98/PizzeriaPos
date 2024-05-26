@@ -4,7 +4,6 @@ using Project.Pos.Pizzeria.WebApi.Command;
 using Project.Pos.Pizzeria.WebApi.DTO;
 using Project.Pos.Pizzeria.WebApi.Entities;
 using Project.Pos.Pizzeria.WebApi.Query;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Project.Pos.Pizzeria.WebApi.Controllers
 {
@@ -26,7 +25,7 @@ namespace Project.Pos.Pizzeria.WebApi.Controllers
 
         [HttpPost("create-customer")]
         public async Task<Response<bool>> CreateCustomer(Clientes entity)
-    => await _clientesCommand.CreateCustomer(entity);
+            => await _clientesCommand.CreateCustomer(entity);
 
         [HttpPut("update-customer")]
         public async Task<Response<bool>> UpdateCustomer(Clientes entity)

@@ -10,16 +10,12 @@ namespace Project.Pos.Pizzeria.WebApi.Entities
 
         [Required]
         public int ClienteId { get; set; }
+        public string Correlativo { get; set; }
 
         [Required]
         public DateTime FechaPedido { get; set; }
 
         [Required]
-        public decimal TotalPedido { get; set; }
-
-        [ForeignKey("ClienteId")]
-        public virtual Clientes Cliente { get; set; }
-
-        public virtual ICollection<PedidoDetalle> PedidoDetalles { get; set; }
+        public decimal TotalPedido { get; set; }     
     }
 }

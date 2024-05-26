@@ -5,30 +5,30 @@ using System.Net;
 
 namespace Project.Pos.Pizzeria.WebApi.Query;
 
-public class ClientesQuery
+public class ProductosQuery
 {
     readonly IRepository<SqlServerRepository> _query;
-    public ClientesQuery(IRepository<SqlServerRepository> query)
+    public ProductosQuery(IRepository<SqlServerRepository> query)
     {
         this._query = query;
     }
 
-    public async Task<Response<List<Clientes>>> GetCustomers() 
+    public async Task<Response<List<Productos>>> GetProducts()
     {
-        var response = new Response<List<Clientes>>();
+        var response = new Response<List<Productos>>();
         try
         {
-            var getClientes = await _query.FindAll<Clientes>();
-            if (getClientes.Count == 0) 
+            var getProducts = await _query.FindAll<Productos>();
+            if (getProducts.Count == 0)
             {
                 response.StatusCode = (int)HttpStatusCode.NoContent;
                 response.Entity = null;
-                response.Message = "No hay clientes disponibles";
+                response.Message = "No hay productos disponibles";
                 return response;
             }
 
             response.StatusCode = 200;
-            response.Entity = getClientes;
+            response.Entity = getProducts;
             response.Message = "OK";
             return response;
         }

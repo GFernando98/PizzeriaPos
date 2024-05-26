@@ -20,5 +20,6 @@ namespace Project.Pos.Pizzeria.WebApi.Entities
         [MaxLength(100)]
         [EmailAddress]
         public string Email { get; set; }
+
     }
 }

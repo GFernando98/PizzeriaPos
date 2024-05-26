@@ -3,6 +3,8 @@
 
 public enum StatusDomain
 {  
+    Ok,
+
     UserExist,
     UserNotExist,
     UserCreate,
@@ -20,5 +22,33 @@ public enum StatusDomain
     CustomerUpdate,
     CustomerUpdateError,
     CustomerDelete,
-    CustomerDeleteError
+    CustomerDeleteError,
+
+    AddressExist,
+    AddressNotExist,
+    AddressCreate,
+    AddressCreateError,
+    AddressUpdate,
+    AddressUpdateError,
+    AddressDelete,
+    AddressDeleteError,
+
+    ProductExist,
+    ProductNotExist,
+    ProductCreate,
+    ProductCreateError,
+    ProductUpdate,
+    ProductUpdateError,
+    ProductDelete,
+    ProductDeleteError,
+
+    OrderExist,
+    OrderNotExist,
+    OrderCreate,
+    OrderCreateError,
+    OrderUpdate,
+    OrderUpdateError,
+    OrderDelete,
+    OrderDeleteError,
+    OrderDetailValidate,
 }
