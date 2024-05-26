@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Project.Pos.Pizzeria.WebApi.Entities
 {
-    public class PedidoDetalle
+    public class PedidosDetalle
     {
         [Key]        
         public int Id { get; set; }

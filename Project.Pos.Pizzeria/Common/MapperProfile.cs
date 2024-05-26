@@ -10,6 +10,6 @@ public class MapperProfile : Profile
     {
         CreateMap<DireccionesView, Direcciones>().ReverseMap();
         CreateMap<PedidosView, Pedidos>().ReverseMap();
-        CreateMap<PedidosDetalleView, PedidoDetalle>().ReverseMap();
+        CreateMap<PedidosDetalleView, PedidosDetalle>().ReverseMap();
     }
 }

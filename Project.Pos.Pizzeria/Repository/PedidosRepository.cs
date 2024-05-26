@@ -46,9 +46,9 @@ public class PedidosRepository
         return getOrders;
     }
 
-    public async Task<List<PedidoDetalle>> GetOrderDetail(int pedidoId)
+    public async Task<List<PedidosDetalle>> GetOrderDetail(int pedidoId)
     {
-        var getOrdeDetails = await _repository.FindAll<PedidoDetalle>();
+        var getOrdeDetails = await _repository.FindAll<PedidosDetalle>();
         return getOrdeDetails;
     }
 }

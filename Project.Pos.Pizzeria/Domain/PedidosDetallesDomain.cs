@@ -25,7 +25,7 @@ namespace Project.Pos.Pizzeria.WebApi.Domain
             if (getOrderDetail != null) return StatusDomain.OrderDetailExist;
             entity.Total = ((entity.Cantidad * entity.PrecioUnitario) * (entity.Impuesto / 100));
             await UpdateTotalOrder(entity.PedidoId);
-            var mapOrderDetail = _mapper.Map<PedidoDetalle>(entity);
+            var mapOrderDetail = _mapper.Map<PedidosDetalle>(entity);
             var insert = await _pedidosDetalleRepository.InserOrderDetail(mapOrderDetail);
             return insert == 0 ? StatusDomain.OrderDetailCreateError : StatusDomain.OrderDetailCreate;
         }
@@ -48,7 +48,7 @@ namespace Project.Pos.Pizzeria.WebApi.Domain
 
             entity.Total = ((entity.Cantidad * entity.PrecioUnitario) * (entity.Impuesto / 100));
             await UpdateTotalOrder(entity.PedidoId);
-            var mapOrderDetail = _mapper.Map<PedidoDetalle>(entity);
+            var mapOrderDetail = _mapper.Map<PedidosDetalle>(entity);
 
             var update = await _pedidosDetalleRepository.UpdateOrderDetail(mapOrderDetail);
             return update == 0 ? StatusDomain.OrderDetailUpdateError : StatusDomain.OrderDetailUpdate;
@@ -58,7 +58,7 @@ namespace Project.Pos.Pizzeria.WebApi.Domain
         {
             var getOrderDetail = await _pedidosDetalleRepository.GetOrderDetailByOrder(entity.Id);
             if (getOrderDetail == null) return StatusDomain.OrderDetailNotExist;
-            var mapOrderDetail = _mapper.Map<PedidoDetalle>(entity);
+            var mapOrderDetail = _mapper.Map<PedidosDetalle>(entity);
             var delete = await _pedidosDetalleRepository.DeleteOrderDetail(mapOrderDetail);
             await UpdateTotalOrder(entity.PedidoId);
             return delete == 0 ? StatusDomain.OrderDetailDeleteError : StatusDomain.OrderDetailDelete;

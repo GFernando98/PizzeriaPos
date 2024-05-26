@@ -11,34 +11,34 @@ public class PedidosDetalleRepository
         this._repository = repository;
     }
 
-    public async Task<int> InserOrderDetail(PedidoDetalle entity)
+    public async Task<int> InserOrderDetail(PedidosDetalle entity)
     {
         var insert = await _repository.Insert(entity);
         return insert;
     }
 
-    public async Task<int> UpdateOrderDetail(PedidoDetalle entity)
+    public async Task<int> UpdateOrderDetail(PedidosDetalle entity)
     {
         var update = await _repository.Update(entity, entity.Id);
         return update;
     }
 
-    public async Task<int> DeleteOrderDetail(PedidoDetalle entity)
+    public async Task<int> DeleteOrderDetail(PedidosDetalle entity)
     {
-        var delete = await _repository.Delete<PedidoDetalle>(entity.Id);
+        var delete = await _repository.Delete<PedidosDetalle>(entity.Id);
         return delete;
     }
 
-    public async Task<PedidoDetalle> GetOrderDetailById(int id)
+    public async Task<PedidosDetalle> GetOrderDetailById(int id)
     {
-        var getOrderDetail = await _repository.Find<PedidoDetalle>(("Id", id));
+        var getOrderDetail = await _repository.Find<PedidosDetalle>(("Id", id));
         return getOrderDetail;
     }
 
 
-    public async Task<List<PedidoDetalle>> GetOrderDetailByOrder(int OrderId)
+    public async Task<List<PedidosDetalle>> GetOrderDetailByOrder(int OrderId)
     {
-        var getOrderDetail = await _repository.FindAll<PedidoDetalle>(("PedidoId", OrderId));
+        var getOrderDetail = await _repository.FindAll<PedidosDetalle>(("PedidoId", OrderId));
         return getOrderDetail;
     }
 
