@@ -93,6 +93,21 @@ CREATE TABLE PedidosDetalle (
     FOREIGN KEY (PedidoId) REFERENCES Pedidos(Id)
 );
 
+CREATE VIEW PedidosDetalleView
+AS
+SELECT
+  A.Id
+ ,A.PedidoId
+ ,A.ProductoId
+ ,B.Codigo AS Codigo
+ ,B.Nombre AS Producto
+ ,A.Cantidad
+ ,B.Precio AS PrecioUnitario
+ ,A.Impuesto
+ ,A.Total
+FROM PedidosDetalle AS A
+INNER JOIN Productos AS B ON A.ProductoId = B.Id;
+
 
 CREATE TABLE Usuarios (
     Id INT PRIMARY KEY IDENTITY(1,1),

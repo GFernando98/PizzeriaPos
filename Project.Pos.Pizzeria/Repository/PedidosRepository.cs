@@ -28,6 +28,12 @@ public class PedidosRepository
         return delete;
     }
 
+    public async Task<Pedidos> GetOrderById(int id)
+    {
+        var getOrder = await _repository.Find<Pedidos>(("Id", id));
+        return getOrder;
+    }
+
     public async Task<Pedidos> GetOrdersByCorrelative(string correlativo)
     {
         var getOrder = await _repository.Find<Pedidos>(("Correlativo", correlativo));

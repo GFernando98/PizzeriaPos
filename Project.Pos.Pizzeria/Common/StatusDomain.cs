@@ -51,4 +51,13 @@ public enum StatusDomain
     OrderDelete,
     OrderDeleteError,
     OrderDetailValidate,
+
+    OrderDetailExist,
+    OrderDetailNotExist,
+    OrderDetailCreate,
+    OrderDetailCreateError,
+    OrderDetailUpdate,
+    OrderDetailUpdateError,
+    OrderDetailDelete,
+    OrderDetailDeleteError,
 }
