@@ -2,6 +2,7 @@ using PosPizzeria.Framework.GenericRepository.GenericRepository;
 using Project.Pos.Pizzeria.WebApi.Command;
 using Project.Pos.Pizzeria.WebApi.Common;
 using Project.Pos.Pizzeria.WebApi.Domain;
+using Project.Pos.Pizzeria.WebApi.Query;
 using Project.Pos.Pizzeria.WebApi.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,11 @@ builder.Services.AddTransient<StatusDomainMessage>();
 builder.Services.AddTransient<UsuariosCommand>();
 builder.Services.AddTransient<UsuariosDomain>();
 builder.Services.AddTransient<UsuariosRepository>();
+
+builder.Services.AddTransient<ClientesQuery>();
+builder.Services.AddTransient<ClientesRepository>();
+builder.Services.AddTransient<ClientesDomain>();
+builder.Services.AddTransient<ClientesCommand>();
 
 // Add services to the container.
 

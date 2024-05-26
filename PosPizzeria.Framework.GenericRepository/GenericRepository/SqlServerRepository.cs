@@ -205,4 +205,26 @@ public class SqlServerRepository : BaseRepository, IRepository<SqlServerReposito
                 : await command.ExecuteAsync(query, parameters);
         }
     }
+
+    public async Task<int> Delete<T>(int id)
+    {
+        var delete = GenerateDelete<T>();
+
+        var dynamicParameters = new DynamicParameters();
+        dynamicParameters.Add("Id", id);
+
+        return await ExecuteInsertUpdate(delete, dynamicParameters, false);
+    }
+
+    private string GenerateDelete<T>()
+    {
+        var tableName = GetTableName<T>();
+
+        return $"DELETE FROM {tableName} WHERE Id = @Id";
+    }
+
+    protected string GetTableName<T>()
+    {
+        return typeof(T).Name;
+    }
 }

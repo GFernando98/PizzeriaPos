@@ -11,5 +11,14 @@ public enum StatusDomain
     UserUpdateError,
     UserDelete,
     UserDeleteError,
-    UserPasswordEquals
+    UserPasswordEquals,
+
+    CustomerExist,
+    CustomerNotExist,
+    CustomerCreate,
+    CustomerCreateError,
+    CustomerUpdate,
+    CustomerUpdateError,
+    CustomerDelete,
+    CustomerDeleteError
 }

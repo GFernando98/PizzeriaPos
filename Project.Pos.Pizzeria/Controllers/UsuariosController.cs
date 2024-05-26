@@ -24,5 +24,9 @@ namespace Project.Pos.Pizzeria.WebApi.Controllers
         public async Task<Response<bool>> UpdateUser(Usuarios entity)
             => await _usuariosCommand.UpdateUser(entity);
 
+        [HttpDelete("delete-user")]
+        public async Task<Response<bool>> DeleteUser(Usuarios entity)
+            => await _usuariosCommand.DeleteUser(entity);
+
     }
 }

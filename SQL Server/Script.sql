@@ -8,24 +8,24 @@ USE POSPizzeria
 -- Creacion de modelos/tablas
 CREATE TABLE Clientes (
     Id INT PRIMARY KEY IDENTITY(1,1),
-    Nombre NVARCHAR(255) NOT NULL,
-    Apellido NVARCHAR(255) NOT NULL,
-    Email NVARCHAR(255) UNIQUE NOT NULL
+    Nombre NVARCHAR(100) NOT NULL,
+    Apellido NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Direccion (
     Id INT PRIMARY KEY IDENTITY(1,1),
     ClienteId INT NOT NULL,
-    Calle NVARCHAR(255) NOT NULL,
+    Calle NVARCHAR(150) NOT NULL,
     Numero INT NOT NULL,
-    Ciudad NVARCHAR(255) NOT NULL,
-    Pais NVARCHAR(255) NOT NULL,
+    Ciudad NVARCHAR(150) NOT NULL,
+    Pais NVARCHAR(70) NOT NULL,
     FOREIGN KEY (ClienteId) REFERENCES Clientes(Id)
 );
 
 CREATE TABLE Productos (
     Id INT PRIMARY KEY IDENTITY(1,1),
-    Nombre NVARCHAR(255) NOT NULL,
+    Nombre NVARCHAR(150) NOT NULL,
     Descripcion NVARCHAR(500) NULL,
     Precio DECIMAL(10,2) NOT NULL
 );

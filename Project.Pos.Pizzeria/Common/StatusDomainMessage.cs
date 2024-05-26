@@ -14,7 +14,16 @@ public class StatusDomainMessage
             StatusDomain.UserDelete => "Se eliminado el usuario correctamente.",
             StatusDomain.UserExist => "El usuario ya existe.",
             StatusDomain.UserNotExist => " El usuario no existe.",
-            StatusDomain.UserPasswordEquals => "La contraseña no puede ser la misma a la enterior."
+            StatusDomain.UserPasswordEquals => "La contraseña no puede ser la misma a la enterior.",
+
+            StatusDomain.CustomerCreateError => "Ocurrió un error mientras se creaba el cliente.",
+            StatusDomain.CustomerUpdateError => "Ocurrió un error mientas se actualizaba el cliente.",
+            StatusDomain.CustomerDeleteError => "Ocurrió un error mientras se eliminaba el cliente.",
+            StatusDomain.CustomerCreate => "Se creó el cliente correctamente.",
+            StatusDomain.CustomerUpdate => "Se actualizo el cliente correctamente.",
+            StatusDomain.CustomerDelete => "Se elimino el cliente correctamente.",
+            StatusDomain.CustomerExist => "El cliente ya existe.",
+            StatusDomain.CustomerNotExist => "El cliente no existe."
         };
     }
 }

@@ -18,5 +18,6 @@ public interface IRepository<Y> where Y : class
     Task<int> Insert<T>(T entity);
     Task<int> Update<T>(T entity, int id);
     Task<T> StoreProcedure<T>(string sp, params (string, object)[] parameters);
-    Task<List<T>> StoreProcedureList<T>(string sp, params (string, object)[] parameters);    
+    Task<List<T>> StoreProcedureList<T>(string sp, params (string, object)[] parameters);
+    Task<int> Delete<T>(int id);
 }

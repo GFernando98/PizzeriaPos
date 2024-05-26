@@ -15,4 +15,5 @@ public class SQLServer<T>
     public async Task Find() => await _repository.Find<T>();
     public async Task<List<T>> FindAll(params (string, object)[] parameters) => await _repository.FindAll<T>(parameters);
     public async Task<T> Find(params (string, object)[] parameters) => await _repository.Find<T>(parameters);
+    public async Task Delete(int id) => await _repository.Delete<T>(id);
 }

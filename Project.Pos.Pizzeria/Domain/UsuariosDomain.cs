@@ -59,5 +59,13 @@ namespace Project.Pos.Pizzeria.WebApi.Domain
             var update = await _usuariosRepository.UpdateUser(getUser);
             return update == 0 ? StatusDomain.UserUpdateError : StatusDomain.UserUpdate;
         }
+
+        public async Task<StatusDomain> DeleteUser(Usuarios entity) 
+        {
+            var getUser = await _usuariosRepository.GetUserByUserName(entity);
+            if (getUser == null) return StatusDomain.UserNotExist;
+            var delete = await _usuariosRepository.DeleteUser(getUser);
+            return delete == 0 ? StatusDomain.UserDeleteError : StatusDomain.UserDelete;
+        }
     }
 }

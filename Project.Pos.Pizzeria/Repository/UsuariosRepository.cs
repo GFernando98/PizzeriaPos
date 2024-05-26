@@ -24,12 +24,16 @@ namespace Project.Pos.Pizzeria.WebApi.Repository
             return update;
         }
 
+        public async Task<int> DeleteUser(Usuarios entity) 
+        {
+            var delete = await _repository.Delete<Usuarios>(entity.Id);
+            return delete;
+        }
 
         public async Task<Usuarios> GetUserByUserName(Usuarios entity) 
         { 
             var getUser = await _repository.Find<Usuarios>(("UserName", entity.UserName));
             return getUser;
-        }
-
+        }     
     }
 }
