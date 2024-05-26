@@ -38,6 +38,11 @@ builder.Services.AddTransient<PedidosRepository>();
 builder.Services.AddTransient<PedidosDomain>();
 builder.Services.AddTransient<PedidosCommand>();
 
+builder.Services.AddTransient<PedidosDetailQuery>();
+builder.Services.AddTransient<PedidosDetalleRepository>();
+builder.Services.AddTransient<PedidosDetallesDomain>();
+builder.Services.AddTransient<PedidosDetalleCommand>();
+
 builder.Services.AddAutoMapper(x => x.AddProfile(new MapperProfile()),
     AppDomain.CurrentDomain.GetAssemblies());
 

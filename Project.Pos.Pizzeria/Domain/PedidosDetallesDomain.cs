@@ -54,13 +54,14 @@ namespace Project.Pos.Pizzeria.WebApi.Domain
             return update == 0 ? StatusDomain.OrderDetailUpdateError : StatusDomain.OrderDetailUpdate;
         }
 
-        public async Task<StatusDomain> DeleteCustomer(PedidosDetalleView entity)
+        public async Task<StatusDomain> DeleteOrderDetail(PedidosDetalleView entity)
         {
-            var getCustomer = await _clientesRepository.GetCustomersById(entity);
-            if (getCustomer == null) return StatusDomain.UserNotExist;
-
-            var delete = await _clientesRepository.DeleteCustomers(getCustomer);
-            return delete == 0 ? StatusDomain.CustomerDeleteError : StatusDomain.CustomerDelete;
+            var getOrderDetail = await _pedidosDetalleRepository.GetOrderDetailByOrder(entity.Id);
+            if (getOrderDetail == null) return StatusDomain.OrderDetailNotExist;
+            var mapOrderDetail = _mapper.Map<PedidoDetalle>(entity);
+            var delete = await _pedidosDetalleRepository.DeleteOrderDetail(mapOrderDetail);
+            await UpdateTotalOrder(entity.PedidoId);
+            return delete == 0 ? StatusDomain.OrderDetailDeleteError : StatusDomain.OrderDetailDelete;
         }
     }
 }

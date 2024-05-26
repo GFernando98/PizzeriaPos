@@ -33,6 +33,35 @@ public class StatusDomainMessage
             StatusDomain.AddressUpdateError => "Ocurrió un error mientras se actualizaba la dirección.",
             StatusDomain.AddressDelete => "Se eliminó la dirección correctamnete.",
             StatusDomain.AddressDeleteError => "Ocurrió un error mientras se eliminaba la dirección",
+
+            StatusDomain.ProductExist => "El producto ya existe",
+            StatusDomain.ProductNotExist => "El producto no existe",
+            StatusDomain.ProductCreate => "Se creo el producto correctamente.",
+            StatusDomain.ProductCreateError => "Ocurrió un error mientras ser creava el producto.",
+            StatusDomain.ProductUpdate => "Se actulizo el prodcuto correctamente.",
+            StatusDomain.ProductUpdateError => "Ocurrió un error mientras se actualizaba el producto.",
+            StatusDomain.ProductDelete => "El producto se elimino correctamente.",
+            StatusDomain.ProductDeleteError => "Ocurrió un error mientras se eliminaba el producto.",
+
+            StatusDomain.OrderExist => "El pedido ya existe.",
+            StatusDomain.OrderNotExist => "El pedido no existe.",
+            StatusDomain.OrderCreate => "El pedido se creo corractamente.",
+            StatusDomain.OrderCreateError => "Ocurrió un error mientras se creaba el pedido",
+            StatusDomain.OrderUpdate => "El pedido se actualizo correctamente.",
+            StatusDomain.OrderUpdateError => "Ocurrió un error mientras se actualizaba el pedido.",
+            StatusDomain.OrderDelete => "El pedido se elimno correctamente.",
+            StatusDomain.OrderDeleteError => "Ocurrio un error mientras se eliminaba el pedido.",
+            StatusDomain.OrderDetailValidate => "No se puede eliminar el pedido porque tiene un detalle existente",
+
+            StatusDomain.OrderDetailExist => "El pedido detalle ya existe.",
+            StatusDomain.OrderDetailNotExist => "El pedido detalle no existe.",
+            StatusDomain.OrderDetailCreate => "El pedido detalle se creo correctamente.",
+            StatusDomain.OrderDetailCreateError => "Ocurrió un error mientras se creaba el pedido detalle.",
+            StatusDomain.OrderDetailUpdate => "El pedido detalle se actualizo correctamente.",
+            StatusDomain.OrderDetailUpdateError => "Ocurrió un error mientas se actualizaba el pedido detalle.",
+            StatusDomain.OrderDetailDelete => "El pedido detalle se elimino correctamente.",
+            StatusDomain.OrderDetailDeleteError => "Ocurrió un error mientras se eliminaba el pedido detalle.",
+        }
         };
     }
 }
